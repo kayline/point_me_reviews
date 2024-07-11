@@ -36,11 +36,14 @@ const StarForm = ({onSuccess}) => {
 
     const response = await fetch('http://localhost:3000/api/review', postOptions);
     const newReview = await response.json();
+    setAllowHover(true);
+    setCurrentRating(0);
     onSuccess(newReview);
   }
 
   return (
     <section className="flex flex-col items-center">
+      <h2>Submit a New Review</h2>
       <div>
         <Star starId={1} marked={1 <= currentRating ? true : false} dynamic={true} onHover={updateRating} onHoverEnd={resetRating} onStarClick={setRating}/>
         <Star starId={2} marked={2 <= currentRating ? true : false} dynamic={true} onHover={updateRating} onHoverEnd={resetRating} onStarClick={setRating}/>
@@ -50,7 +53,7 @@ const StarForm = ({onSuccess}) => {
       </div>
       <input
         type="submit"
-        className="mt-10 h-10 px-6 font-semibold rounded-md bg-black text-white"
+        className="mt-10 h-10 px-6 font-semibold rounded-md bg-indigo-500 hover:bg-indigo-600 text-white"
         value="Submit review"
         onClick={createReview}
       />

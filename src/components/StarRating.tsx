@@ -6,7 +6,7 @@ interface StarRatingProps {
 
 const StarRating = ({rating}) => {
   return (
-    <section className="flex flex-col items-center">
+    <section className="flex flex-col">
       <div>
         <Star starId={1} marked={1 <= rating ? true : false} dynamic={false}/>
         <Star starId={2} marked={2 <= rating ? true : false} dynamic={false}/>

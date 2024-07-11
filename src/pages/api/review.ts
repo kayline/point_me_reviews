@@ -20,7 +20,7 @@ export default async function handler(
   } else if (req.method === "POST") {
     const reviewData = req.body;
     reviewData['id'] = getCurrentId(data);
-    data.push(reviewData); //placeholder for updating the data in storage
+    // TODO: placeholder for updating the data in storage
     res.status(200).json(reviewData);
   } else {
     res.status(404);

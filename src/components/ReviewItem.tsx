@@ -8,10 +8,10 @@ interface ReviewItemProps {
 
 const ReviewItem: React.FC<ReviewItemProps> = ({review}) => {
 	return (
-		<div>
+		<div className='py-6'>
 			<StarRating rating={review.rating} />
-			<p>{review.review}</p>
-			<p>{review.author}</p>
+			<p className='prose'>{review.review}</p>
+			<p className='font-semibold'>{review.author}</p>
 		</div>
 	)
 }

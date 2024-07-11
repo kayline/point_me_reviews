@@ -6,10 +6,10 @@ import ReviewList from "@/components/ReviewList"
 const ReviewApp = () => {
   const [reviews, setReviews] = useState([])
   useEffect(() => {
+    // TODO: Add a loading state and corresponding visual
     const loadReviews = async() => {
       const response = await fetch("http://localhost:3000/api/reviews")
       const data = await response.json();
-      console.log(data)
       setReviews(data);
     };
     loadReviews();
@@ -21,9 +21,7 @@ const ReviewApp = () => {
   
   return (
     <div>
-      <h2>Current Reviews</h2>
       <ReviewList reviews={reviews}/>
-      <h2>Submit a New Review</h2>
       <StarForm onSuccess={addReview}/>
     </div>
   );

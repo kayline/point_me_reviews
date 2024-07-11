@@ -8,7 +8,7 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center p-24 ${inter.className}`}
     >
-      <h1>Review App</h1>
+      <h1 className='text-3xl'>Review App</h1>
       <ReviewApp />
     </main>
   );
