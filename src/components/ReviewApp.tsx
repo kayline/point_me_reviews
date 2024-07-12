@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import Review from "@/data/Review";
-import StarForm from "@/components/StarForm";
+import ReviewForm from "@/components/ReviewForm";
 import ReviewList from "@/components/ReviewList"
 
 const ReviewApp = () => {
@@ -22,7 +22,7 @@ const ReviewApp = () => {
   return (
     <div>
       <ReviewList reviews={reviews}/>
-      <StarForm onSuccess={addReview}/>
+      <ReviewForm onSuccess={addReview}/>
     </div>
   );
 };
